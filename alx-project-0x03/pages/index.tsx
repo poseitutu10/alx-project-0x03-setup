@@ -1,20 +1,15 @@
 import Button from "@/components/common/Button";
 import Layout from "@/components/layouts/Layout";
+import { pageRouteProps } from "@/interface";
 import { useRouter } from "next/router";
 import React from "react";
 
-
-interface pageRouteProps {
-  pageRoute: string;
-}
-
 export default function Home() {
-
   const router = useRouter();
 
-  const routeToNextPage = ( { pageRoute }: pageRouteProps) => {
-    router.push(pageRoute, undefined, {shallow: false} )
-  }
+  const routeToNextPage = ({ pageRoute }: pageRouteProps) => {
+    router.push(pageRoute, undefined, { shallow: false });
+  };
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center text-center">
       {/* Welcome Message */}
@@ -28,9 +23,21 @@ export default function Home() {
 
       {/* Navigation Options */}
       <div className="flex gap-6">
-        <Button action={() => routeToNextPage({ pageRoute: '/generate-text-ai' })} buttonLabel="Generate Text" backgroundColor="blue" />
-        <Button action={() => routeToNextPage({ pageRoute: '/text-to-image'})} buttonLabel="Text to Image" backgroundColor="green" />
-        <Button action={() => routeToNextPage({ pageRoute: '/counter-app'})} buttonLabel="Contact us" backgroundColor="orange" />
+        <Button
+          action={() => routeToNextPage({ pageRoute: "/generate-text-ai" })}
+          buttonLabel="Generate Text"
+          backgroundColor="blue"
+        />
+        <Button
+          action={() => routeToNextPage({ pageRoute: "/text-to-image" })}
+          buttonLabel="Text to Image"
+          backgroundColor="green"
+        />
+        <Button
+          action={() => routeToNextPage({ pageRoute: "/counter-app" })}
+          buttonLabel="Contact us"
+          backgroundColor="orange"
+        />
       </div>
     </div>
   );
