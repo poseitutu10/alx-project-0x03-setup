@@ -12,6 +12,6 @@ export interface LayoutProps {
 }
 
 
-export interface pageRouteProps {
+export interface PageRouteProps {
   pageRoute: string;
 }
