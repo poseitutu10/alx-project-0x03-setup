@@ -10,7 +10,7 @@ interface pageRouteProps {
 
 export default function Home() {
 
-  const router = useRouter()
+  const router = useRouter();
 
   const routeToNextPage = ( { pageRoute }: pageRouteProps) => {
     router.push(pageRoute, undefined, {shallow: false} )
